@@ -5,6 +5,7 @@ html{
 body{
     background-color: rgb(119 119 119);
 }
+
 .bayan {
     padding: 1rem 0;
     overflow: hidden;
@@ -97,11 +98,17 @@ body{
     color:  rgb(191 182 38);
     transition: color .5s ease;
 }
+.bayan__input:checked + .bayan__label-box .img__mark path{
+    fill:rgb(191 182 38) !important;    
+}
 
 @media (hover:hover) {
     .bayan__input:hover + .bayan__label-box .img__mark{
         transform: rotate(-90deg);
         transition: all .5s ease;
+    }
+    .bayan__input:hover + .bayan__label-box .img__mark path{
+        fill:rgb(191 182 38) !important;    
     }
     .bayan__input:hover + .bayan__label-box .bayan__text{
         color:  rgb(191 182 38);
