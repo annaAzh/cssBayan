@@ -1,0 +1,172 @@
+html{
+    font-family: 'Roboto', sans-serif;
+    color: black;
+}
+body{
+    background-color: rgb(119 119 119);
+}
+
+.bayan {
+    padding: 1rem 0;
+    overflow: hidden;
+    min-height: 100vh;  
+}
+.container {
+    padding: 0 0.5rem;
+    margin: 0 auto;
+}
+.bayan__title {
+    font-size: 2rem;
+    line-height: 120%;
+    padding-bottom: 3rem;
+    color: black;
+    text-align: center;
+    border-bottom: .1rem solid #b263b4;
+}
+.bayan__label {
+    display: block;
+    padding: .5rem .5rem;
+    border-bottom: .10rem solid #b263b4;
+    font-size: 1.5rem;
+    line-height: 120%;   
+}
+.bayan__label-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bayan__input{
+    display: none;
+}
+.span{
+    display: block;
+}
+.bayan__text{
+    padding: .5rem 0;
+}
+.bayan__span {
+    display: none;
+}
+.bayan__input:checked >.bayan__label .bayan__span {
+    display: block;
+    height: 25em;
+}
+.bayan__img {
+    margin: 0 auto;
+    max-width: 100%;
+    height: 10em;
+    margin-top: 1em;
+    object-fit: cover;
+    margin-bottom: 3em;
+}
+.img__mark{
+    transform: rotate(-45deg);
+    margin-right: 1rem;
+    width: .5rem;    
+}
+
+.bayan__span {
+    display: block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+.bayan__input:checked ~ .bayan__span{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow: visible;
+    align-items: center;
+    justify-content: center;
+    animation: shows 1s ease-out;
+    cursor: pointer;
+} 
+@keyframes shows {
+    0% {
+        display: block;
+        opacity: 0;    
+    }
+    100%{
+        display: block;
+        opacity: 1;
+        overflow: visible;
+    }
+} 
+.bayan__input:checked + .bayan__label-box .bayan__text{
+    color:  rgb(191 182 38);
+    transition: color .5s ease;
+}
+.bayan__input:checked + .bayan__label-box .img__mark path{
+    fill:rgb(191 182 38) !important;    
+}
+
+@media (hover:hover) {
+    .bayan__input:hover + .bayan__label-box .img__mark{
+        transform: rotate(-90deg);
+        transition: all .5s ease;
+    }
+    .bayan__input:hover + .bayan__label-box .img__mark path{
+        fill:rgb(191 182 38) !important;    
+    }
+    .bayan__input:hover + .bayan__label-box .bayan__text{
+        color:  rgb(191 182 38);
+        transition: color .5s ease;
+    }
+    .bayan__input:hover ~ .bayan__span{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        overflow: visible;
+        align-items: center;
+        justify-content: center;
+        animation: show 1s ease-out;
+        cursor: pointer;
+    } 
+
+    @keyframes show {
+        0% {
+            display: block;
+            opacity: 0.1;
+            
+        }
+        100%{
+            display: block;
+            opacity: 1;
+            overflow: visible;
+        }
+    }    
+}
+
+@media (min-width: 320px) {
+    html{
+        font-size: calc(100vw / 320 * 10);
+    }
+    .container{
+        max-width: 32rem;
+    }    
+}
+@media (min-width: 820px) {
+    html{
+        font-size: calc(100vw / 820 * 10);
+    }
+    .container{
+        max-width: 75rem;
+    }
+    .img__mark{
+        width: 1rem;    
+    }
+    .bayan__label {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    html{
+        font-size: calc(100vw / 1920 * 10);
+    }
+    .container{
+        max-width: 140rem;
+    }   
+}
